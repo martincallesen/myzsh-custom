@@ -1,1 +1,0 @@
-alias idea='open -na "IntelliJ IDEA.app"'
