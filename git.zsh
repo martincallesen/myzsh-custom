@@ -2,4 +2,4 @@
 export GIT_ASKPASS=~/.git-askpass
 
 #Fetch branches, look for branches that are gone and delete them
-alias gbfgD='gfa && git gone | xargs git branch -D'
+alias gbsync='gfa && git gone | xargs git branch -D'
