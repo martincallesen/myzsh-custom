@@ -9,3 +9,5 @@ Backup your settings for the case of disaster.
 Add symlink in ~/.oh-my-zsh/custom
 
 ln -fvs ~/.oh-my-zsh/custom ~/repositories/github/myzsh-custom
+
+or you can add config in .zshrc
