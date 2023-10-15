@@ -1,2 +1,2 @@
-export OPENAI_API_KEY='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'
+export OPENAI_API_KEY='REPLACE_ME'
 
