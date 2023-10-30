@@ -1,6 +1,6 @@
 # Inspired by https://www.howtogeek.com/889200/how-to-run-chatgpt-using-shellgpt-from-the-ubuntu-terminal/
 # Github project at https://github.com/TheR1D/shell_gpt
-alias chatgpt="cd ~/repositories/github/shellgpt/;source shellgpt/bin/activate"
+alias chatgpt="cd ~/repositories/github/shellgpt/;source shellgpt/bin/activate;cd -"
 
 # Shell-GPT integration ZSH v0.1
 _sgpt_zsh() {
