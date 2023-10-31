@@ -2,6 +2,9 @@
 # Github project at https://github.com/TheR1D/shell_gpt
 alias chatgpt="cd ~/repositories/github/shellgpt/;source shellgpt/bin/activate;cd -"
 
+# Chatgpt prompts
+alias cgcam='git diff | sgpt 'can you suggest one commit message in one line for the change' | xargs -I {} git commit -am "{}"'
+
 # Shell-GPT integration ZSH v0.1
 _sgpt_zsh() {
 if [[ -n "$BUFFER" ]]; then
