@@ -1,1 +1,5 @@
-security.zsh
+# Credentials
+*-credentials.zsh
+
+# Credentials template file to inject the secrets into
+*-credentials.zsh.tpl
