@@ -5,6 +5,8 @@ Share your aliases or cool functions via links in Github.
 Port your configuration to other computers (clone the repo)
 Backup your settings for the case of disaster.
 
+Many of the scripts are made for mac
+
 # How to
 Add symlink in ~/.oh-my-zsh/custom
 
