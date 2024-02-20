@@ -3,3 +3,6 @@
 
 # Credentials template file to inject the secrets into
 *-credentials.zsh.tpl
+
+# Protected environment files
+*-env.zsh

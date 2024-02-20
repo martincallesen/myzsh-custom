@@ -1,1 +1,1 @@
-alias idea='open -na "IntelliJ IDEA.app"'
+alias idea='open ~/Applications/IntelliJ\ IDEA\ Ultimate.app'
