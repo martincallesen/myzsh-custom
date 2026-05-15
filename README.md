@@ -10,6 +10,6 @@ Many of the scripts are made for mac
 # How to
 Add symlink in ~/.oh-my-zsh/custom
 
-ln -fvs ~/.oh-my-zsh/custom ~/repositories/github/myzsh-custom
+ln -fvs ~/repositories/github/myzsh-custom ~/.oh-my-zsh/custom/myzsh-custom
 
 or you can add config in .zshrc
