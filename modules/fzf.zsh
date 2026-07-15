@@ -59,9 +59,13 @@ fzf-git-checkout() {
 # Uncomment the following line to disable fuzzy completion for commands and paths
 # export DISABLE_FZF_AUTO_COMPLETION="true"
 
-# Optional: Disable fzf key bindings
-# Uncomment the following line to disable default key bindings:
+# Fzf key bindings (unless disabled):
 # CTRL-T: fuzzy find files and directories
 # CTRL-R: fuzzy search command history
 # ALT-C: fuzzy find and cd into directory
-# export DISABLE_FZF_KEY_BINDINGS="true"
+if [[ -z "${DISABLE_FZF_KEY_BINDINGS:-}" ]]; then
+    myzsh_source_plugin \
+        /opt/homebrew/opt/fzf/shell/key-bindings.zsh \
+        /usr/local/opt/fzf/shell/key-bindings.zsh \
+        /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
