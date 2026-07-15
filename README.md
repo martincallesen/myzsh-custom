@@ -39,7 +39,7 @@ When the custom folder is linked, Oh My Zsh loads `load.zsh` automatically. A se
 
 ```bash
 ./setup.sh                  # install tools, link custom folder
-./setup.sh --write-zshrc    # also append source line to ~/.zshrc
+./setup.sh --write-zshrc    # also add Oh My Zsh bootstrap to ~/.zshrc
 ./setup.sh --no-link-custom # skip Oh My Zsh symlink
 ./setup.sh --help           # show all options
 ```
@@ -89,6 +89,7 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 | `modules/fzf.zsh` | Fzf defaults and git branch fuzzy finder | `fzf` |
 | `modules/direnv.zsh` | Per-directory environment via `.envrc` | `direnv` |
 | `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass` |
+| `modules/prompt.zsh` | Colored prompt with directory, git branch, and dirty indicator | — |
 | `modules/docker.zsh` | Docker disk usage and prune aliases | Docker |
 | `modules/maven.zsh` | `mvn` wrapper that prefers `./mvnw` | Maven (optional) |
 | `modules/wordpress.zsh` | `create_wordpress_post` helper | `curl` |
@@ -106,6 +107,13 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 
 - `fzf-git-branch` — pick a branch with log preview
 - `fzf-git-checkout` — checkout the selected branch
+- **Ctrl+R** — fuzzy command history search
+- **Ctrl+T** — fuzzy file search
+- **Alt+C** — fuzzy cd into directory
+
+### Shell helpers
+
+- `reload-zsh` — reload `~/.zshrc`
 
 ## Zsh plugins
 

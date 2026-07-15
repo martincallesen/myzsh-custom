@@ -16,6 +16,17 @@ myzsh_source_if_exists() {
   [[ -f "$file" ]] && source "$file"
 }
 
+myzsh_source_plugin() {
+  local path
+  for path in "$@"; do
+    if [[ -f "$path" ]]; then
+      source "$path"
+      return 0
+    fi
+  done
+  return 1
+}
+
 myzsh_source_if_exists "$myzsh_modules_dir/lang.zsh"
 myzsh_source_if_exists "$myzsh_modules_dir/history.zsh"
 myzsh_source_if_exists "$myzsh_modules_dir/brew.zsh"

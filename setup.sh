@@ -340,11 +340,11 @@ EOF
   fi
 
   cat <<EOF
-Optional tools (install manually if you use the matching scripts):
-  docker    - docker.zsh
-  sdkman    - sdkman.zsh (https://sdkman.io/install)
-  maven     - maven.zsh
-  ~/.git-askpass - git.zsh credential helper
+Optional tools (install manually if you use the matching modules):
+  docker    - modules/docker.zsh
+  sdkman    - modules/sdkman.zsh (https://sdkman.io/install)
+  maven     - modules/maven.zsh
+  ~/.git-askpass - modules/git.zsh credential helper
 EOF
 }
 

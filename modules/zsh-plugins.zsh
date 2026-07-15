@@ -1,18 +1,7 @@
-# Plugins for zsh
+# Zsh syntax highlighting and autosuggestions
 
 myzsh_repo_dir="${${(%):-%x}:A:h}/.."
 myzsh_repo_dir="${myzsh_repo_dir:A}"
-
-myzsh_source_plugin() {
-  local path
-  for path in "$@"; do
-    if [[ -f "$path" ]]; then
-      source "$path"
-      return 0
-    fi
-  done
-  return 1
-}
 
 myzsh_source_plugin \
   /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
