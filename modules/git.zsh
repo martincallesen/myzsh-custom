@@ -8,7 +8,7 @@ export GIT_ASKPASS=~/.git-askpass
 # Alias: gbsync - Synchronize branches by removing deleted remote branches locally
 # Fetches all updates from remote and removes local branches that no longer exist upstream
 # Usage: gbsync
-alias gbsync='gfa && git gone | xargs git branch -D
+alias gbsync='gfa && git gone | xargs git branch -D'
 
 # Alias: gb - Fuzzy find and display git branches (using fzf integration)
 # Provides interactive branch selection with git log preview

@@ -13,8 +13,10 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # Shows git log preview for selected branch
 # Returns the selected branch name (without remote prefix if applicable)
 fzf-git-branch() {
-    # Verify we're in a git repository
-    git rev-parse HEAD > /dev/null 2>&1 || return
+    if ! git rev-parse HEAD > /dev/null 2>&1; then
+        echo "Not in a git repository." >&2
+        return 1
+    fi
 
     # List all branches with color, sorted by commit date (most recent first)
     # Exclude HEAD and use fzf with preview of recent commits
@@ -29,8 +31,10 @@ fzf-git-branch() {
 # Automatically tracks remote branches and checks out local branches
 # Usage: fzf-git-checkout
 fzf-git-checkout() {
-    # Verify we're in a git repository
-    git rev-parse HEAD > /dev/null 2>&1 || return
+    if ! git rev-parse HEAD > /dev/null 2>&1; then
+        echo "Not in a git repository." >&2
+        return 1
+    fi
 
     local branch
 

@@ -6,3 +6,6 @@
 
 # Protected environment files
 *-env.zsh
+
+# Zsh plugins installed by setup.sh
+plugins/

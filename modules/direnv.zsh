@@ -6,4 +6,6 @@
 
 # Initialize direnv hook into the Zsh shell
 # This allows direnv to intercept cd commands and manage environment state
-eval "$(direnv hook zsh)"
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
