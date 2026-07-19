@@ -91,6 +91,7 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 | `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass` |
 | `modules/prompt.zsh` | Colored prompt with directory, git branch, and dirty indicator | — |
 | `modules/docker.zsh` | Docker disk usage and prune aliases | Docker |
+| `modules/bat.zsh` | Alias `bat` → `batcat` on Debian/Ubuntu | `bat` (apt package) |
 | `modules/maven.zsh` | `mvn` wrapper that prefers `./mvnw` | Maven (optional) |
 | `modules/wordpress.zsh` | `create_wordpress_post` helper | `curl` |
 | `modules/macos.zsh` | macOS-only maintenance aliases | macOS |

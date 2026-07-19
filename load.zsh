@@ -36,6 +36,7 @@ myzsh_source_if_exists "$myzsh_modules_dir/direnv.zsh"
 myzsh_source_if_exists "$myzsh_modules_dir/git.zsh"
 myzsh_source_if_exists "$myzsh_modules_dir/prompt.zsh"
 myzsh_source_if_exists "$myzsh_modules_dir/docker.zsh"
+myzsh_source_if_exists "$myzsh_modules_dir/bat.zsh"
 myzsh_source_if_exists "$myzsh_modules_dir/maven.zsh"
 myzsh_source_if_exists "$myzsh_modules_dir/wordpress.zsh"
 
