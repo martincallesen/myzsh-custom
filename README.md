@@ -73,6 +73,7 @@ Aliases like `gst` (`git status`) come from the Oh My Zsh `git` plugin and only 
 | `bad substitution` when sourcing | You are in bash; use zsh |
 | `no such file or directory: oh-my-zsh.sh` | Re-run `./setup.sh` |
 | `Insecure completion-dependent directories` | Re-run `./setup.sh` to fix ownership, or add `ZSH_DISABLE_COMPFIX=true` to `~/.zshrc` |
+| `custom/example.zsh` is beyond a symbolic link / Cannot autostash | Re-run `./setup.sh` (marks OMZ example files skip-worktree so updates work with the custom symlink) |
 | `gb` shows nothing | You are not inside a git repository |
 | `Not in a git repository` | Run `gb` / `gco` from inside a git repo |
 

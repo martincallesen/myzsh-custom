@@ -224,6 +224,26 @@ install_zsh_plugins() {
   clone_plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting
 }
 
+# Symlinking over ~/.oh-my-zsh/custom makes OMZ's tracked example files look
+# deleted "beyond a symbolic link". Mark them skip-worktree so `omz update`
+# (git pull --autostash) can succeed.
+protect_oh_my_zsh_custom_examples() {
+  local omz_git="$OH_MY_ZSH_DIR/.git"
+  [[ -d "$omz_git" ]] || return 0
+
+  local examples=(
+    custom/example.zsh
+    custom/plugins/example/example.plugin.zsh
+    custom/themes/example.zsh-theme
+  )
+  local path
+  for path in "${examples[@]}"; do
+    if git -C "$OH_MY_ZSH_DIR" ls-files --error-unmatch "$path" >/dev/null 2>&1; then
+      git -C "$OH_MY_ZSH_DIR" update-index --skip-worktree "$path" 2>/dev/null || true
+    fi
+  done
+}
+
 link_custom_folder() {
   if ! oh_my_zsh_installed; then
     warn "Oh My Zsh is not installed; skipping custom folder link"
@@ -232,6 +252,7 @@ link_custom_folder() {
 
   if [[ -L "$ZSH_CUSTOM" && "$(readlink -f "$ZSH_CUSTOM")" == "$REPO_ROOT" ]]; then
     log "custom folder already linked to this repo"
+    protect_oh_my_zsh_custom_examples
     return 0
   fi
 
@@ -246,6 +267,7 @@ link_custom_folder() {
 
   log "linking $REPO_ROOT -> $ZSH_CUSTOM"
   ln -sfn "$REPO_ROOT" "$ZSH_CUSTOM"
+  protect_oh_my_zsh_custom_examples
 }
 
 repair_zshrc() {
