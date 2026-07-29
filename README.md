@@ -89,7 +89,8 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 | `modules/zsh-plugins.zsh` | Syntax highlighting and autosuggestions | zsh plugins (see below) |
 | `modules/fzf.zsh` | Fzf defaults and git branch fuzzy finder | `fzf` |
 | `modules/direnv.zsh` | Per-directory environment via `.envrc` | `direnv` |
-| `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass` |
+| `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`, `gpf`) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass` |
+| `gitconfig` | Git aliases included into `~/.gitconfig` by `setup.sh` (`pf`) | `git` |
 | `modules/prompt.zsh` | Colored prompt with directory, git branch, and dirty indicator | — |
 | `modules/docker.zsh` | Docker disk usage and prune aliases | Docker |
 | `modules/bat.zsh` | Alias `bat` → `batcat` on Debian/Ubuntu | `bat` (apt package) |
@@ -104,6 +105,7 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 - `gb` — fuzzy list branches
 - `gco` — fuzzy checkout branch
 - `gbsync` — prune local branches deleted on remote
+- `gpf` — `g pf` (git `push --force-with-lease`; see `gitconfig`)
 
 ### Fzf git helpers (from `modules/fzf.zsh`)
 

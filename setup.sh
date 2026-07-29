@@ -317,6 +317,24 @@ EOF
   log "appended source line to $ZSHRC"
 }
 
+install_git_aliases() {
+  if ! command -v git >/dev/null 2>&1; then
+    warn "git not found; skipping gitconfig include"
+    return 0
+  fi
+
+  local include_path="$REPO_ROOT/gitconfig"
+  local current
+  current="$(git config --global --get-all include.path 2>/dev/null || true)"
+  if printf '%s\n' "$current" | grep -Fxq "$include_path"; then
+    log "gitconfig already includes $include_path"
+    return 0
+  fi
+
+  log "including git aliases from $include_path"
+  git config --global --add include.path "$include_path"
+}
+
 verify_shell_setup() {
   if zsh -i -c 'whence gst' 2>/dev/null | grep -q gst; then
     log "verified: gst alias works in zsh"
@@ -343,6 +361,9 @@ If that still fails, start a fresh interactive zsh:
 
 Test Oh My Zsh git aliases:
   gst
+
+Test force-push-with-lease (gpf -> g pf):
+  gpf
 
 Test branch picker (inside a git repo):
   gb
@@ -403,6 +424,7 @@ main() {
     write_zshrc_entry
   fi
 
+  install_git_aliases
   repair_zshrc
   verify_shell_setup || true
   print_next_steps
