@@ -89,8 +89,8 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 | `modules/zsh-plugins.zsh` | Syntax highlighting and autosuggestions | zsh plugins (see below) |
 | `modules/fzf.zsh` | Fzf defaults and git branch fuzzy finder | `fzf` |
 | `modules/direnv.zsh` | Per-directory environment via `.envrc` | `direnv` |
-| `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`, `gpf`) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass` |
-| `gitconfig` | Git aliases included into `~/.gitconfig` by `setup.sh` (`pf`) | `git` |
+| `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`, `glol`, …) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass` |
+| `gitconfig` | Common git aliases included into `~/.gitconfig` by `setup.sh` | `git` |
 | `modules/prompt.zsh` | Colored prompt with directory, git branch, and dirty indicator | — |
 | `modules/docker.zsh` | Docker disk usage and prune aliases | Docker |
 | `modules/bat.zsh` | Alias `bat` → `batcat` on Debian/Ubuntu | `bat` (apt package) |
@@ -100,12 +100,28 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 | `modules/chrome.zsh` | Open Google Chrome | macOS |
 | `modules/sdkman.zsh` | SDKMAN init (must load last) | [SDKMAN](https://sdkman.io/install) |
 
-### Git aliases (from `modules/git.zsh`)
+### Git aliases (from `modules/git.zsh` + `gitconfig`)
+
+Custom helpers:
 
 - `gb` — fuzzy list branches
 - `gco` — fuzzy checkout branch
 - `gbsync` — prune local branches deleted on remote
-- `gpf` — `g pf` (git `push --force-with-lease`; see `gitconfig`)
+
+Gitconfig aliases (use as `g <alias>` or `git <alias>`):
+
+| Alias | Meaning |
+|-------|---------|
+| `st` / `co` / `br` | status / checkout / branch |
+| `ci` / `cm` | commit / commit -m |
+| `lol` / `lola` | oneline graph log (+ all branches) |
+| `lg` / `last` | colorful graph log / last commit |
+| `df` / `dc` | diff / diff --cached |
+| `pf` | push --force-with-lease |
+| `unstage` / `amend` / `cp` / `undo` / `wip` | staging helpers |
+| `aliases` | list git aliases |
+
+Zsh shortcuts for a few of those: `glol`, `glola`, `gpf`, `gdf`, `gdc`, `gunstage`, `gamend`, `gundo`, `gci`.
 
 ### Fzf git helpers (from `modules/fzf.zsh`)
 

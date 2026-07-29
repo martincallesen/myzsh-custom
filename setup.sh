@@ -362,8 +362,9 @@ If that still fails, start a fresh interactive zsh:
 Test Oh My Zsh git aliases:
   gst
 
-Test force-push-with-lease (gpf -> g pf):
-  gpf
+Test git aliases (g lol / glol, gpf, …):
+  g lol
+  glol
 
 Test branch picker (inside a git repo):
   gb
