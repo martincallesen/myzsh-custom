@@ -89,7 +89,7 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 | `modules/zsh-plugins.zsh` | Syntax highlighting and autosuggestions | zsh plugins (see below) |
 | `modules/fzf.zsh` | Fzf defaults and git branch fuzzy finder | `fzf` |
 | `modules/direnv.zsh` | Per-directory environment via `.envrc` | `direnv` |
-| `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`, `glol`, …) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass` |
+| `modules/git.zsh` | Git aliases (`gb`, `gco`, `gbsync`, `gcai`, `glol`, …) and `GIT_ASKPASS` | `git`, `fzf`, `~/.git-askpass`, Cursor Agent CLI (for `gcai`) |
 | `gitconfig` | Common git aliases included into `~/.gitconfig` by `setup.sh` | `git` |
 | `modules/prompt.zsh` | Colored prompt with directory, git branch, and dirty indicator | — |
 | `modules/docker.zsh` | Docker disk usage and prune aliases | Docker |
@@ -107,6 +107,7 @@ Custom helpers:
 - `gb` — fuzzy list branches
 - `gco` — fuzzy checkout branch
 - `gbsync` — prune local branches deleted on remote
+- `gcai` — generate a commit message with Cursor AI for staged changes, confirm, then commit (needs [Cursor Agent CLI](https://cursor.com/docs/cli/installation) + `agent login`)
 
 Gitconfig aliases (use as `g <alias>` or `git <alias>`):
 
@@ -121,7 +122,7 @@ Gitconfig aliases (use as `g <alias>` or `git <alias>`):
 | `unstage` / `amend` / `cp` / `undo` / `wip` | staging helpers |
 | `aliases` | list git aliases |
 
-Zsh shortcuts for a few of those: `glol`, `glola`, `gpf`, `gdf`, `gdc`, `gunstage`, `gamend`, `gundo`, `gci`.
+Zsh shortcuts for a few of those: `glol`, `glola`, `gpf`, `gdf`, `gdc`, `gunstage`, `gamend`, `gundo`, `gci`. Cursor AI: `gcai`.
 
 ### Fzf git helpers (from `modules/fzf.zsh`)
 
