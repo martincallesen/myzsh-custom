@@ -98,7 +98,13 @@ All modules live in `modules/`. Only `load.zsh` sits at the repo root.
 | `modules/wordpress.zsh` | `create_wordpress_post` helper | `curl` |
 | `modules/macos.zsh` | macOS-only maintenance aliases | macOS |
 | `modules/chrome.zsh` | Open Google Chrome | macOS |
+| `modules/linux.zsh` | Linux Mint helpers (`sleep-disable`, `sleep-enable`) | systemd, xfce4-power-manager |
 | `modules/sdkman.zsh` | SDKMAN init (must load last) | [SDKMAN](https://sdkman.io/install) |
+
+### Linux Mint sleep helpers (from `modules/linux.zsh`)
+
+- `sleep-disable` — turn off idle sleep/suspend (Xfce power manager + systemd mask)
+- `sleep-enable` — restore idle sleep/suspend
 
 ### Git aliases (from `modules/git.zsh` + `gitconfig`)
 

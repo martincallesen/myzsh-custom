@@ -43,6 +43,8 @@ myzsh_source_if_exists "$myzsh_modules_dir/wordpress.zsh"
 if [[ "$(uname -s)" == "Darwin" ]]; then
   myzsh_source_if_exists "$myzsh_modules_dir/macos.zsh"
   myzsh_source_if_exists "$myzsh_modules_dir/chrome.zsh"
+elif [[ "$(uname -s)" == "Linux" ]]; then
+  myzsh_source_if_exists "$myzsh_modules_dir/linux.zsh"
 fi
 
 myzsh_source_if_exists "$myzsh_modules_dir/sdkman.zsh"
